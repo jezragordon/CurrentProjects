@@ -6,8 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" type="text/css" href="css/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="css/calendar.css">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
   <title>The Abaco Club - Pre-Arrival Console</title>
 </head>
 
@@ -23,10 +25,41 @@
     </nav>
     <!-- 1ST PROVIDE NAME -->
     <section class="textForms" id="provideName">
-      <h1>PLEASE PROVIDE YOUR FIRST AND LAST NAME<br />
-				<sub>Optional</sub></h1>
-      <input type="text" name="entry.38889136" class="name" id="firstName" placeholder="First Name">
-      <input type="text" name="entry.562344336" class="name" id="lastName" placeholder="Last Name">
+      <h1>PLEASE REGISTER YOURSELF AND YOUR GUESTS<br />
+				</h1>
+<!--         <input type="text" id="datepicker"> -->
+      <input  type="text" name="entry.1458294248" class="name" id="datepicker" placeholder="Arrival Date"><br />
+      <input type="text" name="entry.125958543" class="name" id="firstName" placeholder="Your First Name">
+      <input type="text" name="entry.1751603251" class="name" id="lastName" placeholder="Your Last Name">
+      <input type="text" name="entry.1912128957" class="name" id="guest1firstname" placeholder="Guest 1 First Name">
+      <input type="text" name="entry.8793174" class="name" id="guest1lastname" placeholder="Guest 1 Last Name">
+      <input type="text" name="entry.1133083523" class="name bigBottom" id="guest1email" placeholder="Guest 1 Email">
+      <input type="text" name="entry.181165311" class="name" id="guest2firstname" placeholder="Guest 2 First Name">
+      <input type="text" name="entry.1779926079" class="name" id="guest2lastname" placeholder="Guest 2 Last Name">
+      <input type="email" name="entry.1407424141" class="name bigBottom" id="guest2email" placeholder="Guest 2 Email">
+      <input type="text" name="entry.720697189" class="name" id="guest3firstname" placeholder="Guest 3 First Name">
+      <input type="text" name="entry.860627045" class="name" id="guest3lastname" placeholder="Guest 3 Last Name">
+      <input type="email" name="entry.569848737" class="name bigBottom" id="guest3email" placeholder="Guest 3 Email">
+
+      <input type="text" name="entry.228868308" class="name" id="guest4firstname" placeholder="Guest 4 First Name">
+      <input type="text" name="entry.720785260" class="name" id="guest4lastname" placeholder="Guest 4 Last Name">
+      <input type="text" name="entry.1560625099" class="name bigBottom" id="guest3email" placeholder="Guest 4 Email">
+
+      <input type="text" name="entry.2103772881" class="name" id="guest5firstname" placeholder="Guest 5 First Name">
+      <input type="text" name="entry.1005462121" class="name" id="guest5lastname" placeholder="Guest 5 Last Name">
+      <input type="text" name="entry.30990793" class="name bigBottom" id="guest5email" placeholder="Guest 5 Email">
+
+      <input type="text" name="entry.1516109444" class="name" id="guest6firstname" placeholder="Guest 6 First Name">
+      <input type="text" name="entry.681371232" class="name" id="guest6lastname" placeholder="Guest 6 Last Name">
+      <input type="text" name="entry.1727814613" class="name bigBottom" id="guest6email" placeholder="Guest 6 Email">
+
+      <input type="text" name="entry.1869442866" class="name" id="guest7firstname" placeholder="Guest 7 First Name">
+      <input type="text" name="entry.1215000110" class="name" id="guest7lastname" placeholder="Guest 7 Last Name">
+      <input type="text" name="entry.993831154" class="name bigBottom" id="guest7email" placeholder="Guest 7 Email">
+
+      <input type="text" name="entry.34591044" class="name" id="guest8firstname" placeholder="Guest 8 First Name">
+      <input type="text" name="entry.854742999" class="name" id="guest8lastname" placeholder="Guest 8 Last Name">
+      <input type="text" name="entry.1491345046" class="name bigBottom" id="guest8email" placeholder="Guest 8 Email">
       <button class="submitExplain" id="nameButton">submit</button>
     </section>
 
@@ -37,43 +70,91 @@
     <section id="favoriteActivities">
       <h1>EVERYTHING YOU NEED FOR YOUR STAY IN PARADISE:<br />
 	</h1>
-      <input src="images/consoleIcons/teeTime.png" type="image" name="entry.1659805839" class="chooseActivities" id="golf" value="golf">
-      <input src="images/consoleIcons/dining.png" type="image" name="entry.1043167667" class="chooseActivities" id="food" value="food">
-      <input src="images/consoleIcons/charteredflights.png" type="image" name="entry.1443328567" class="chooseActivities" id="beach" value="beach">
-      <input src="images/consoleIcons/spa.png" type="image" name="entry.2132321252" class="chooseActivities" id="spa" value="spa">
-      <input src="images/consoleIcons/fishing.png" type="image" name="entry.1041476142" class="chooseActivities" id="fishing" value="fishing">
-      <input src="images/consoleIcons/boating.png" type="image" name="entry.387432865" class="chooseActivities" id="tennis" value="tennis">
-      <input src="images/consoleIcons/carRentals.png" type="image" name="entry.1484677548" class="chooseActivities" id="kayaking" value="water-sports">
-      <input src="images/consoleIcons/babysitting.png" type="image" name="entry.1969578007" class="chooseActivities" id="fitness" value="fitness">
-      <input src="images/consoleIcons/catering.png" type="image" name="entry.1484677548" class="chooseActivities" id="kayaking" value="water-sports">
-      <input src="images/consoleIcons/groceries.png" type="image" name="entry.1969578007" class="chooseActivities" id="fitness" value="fitness">
-      <button id="submitActivitiesList">submit</button>
+      <input src="images/bookteetime.png" type="image"  class="chooseActivities" id="golf" value="golf">
+      <input src="images/food.png" type="image" class="chooseActivities" id="dinner" value="food">
+      <input src="images/beach.png" type="image"class="chooseActivities" id="spa" value="spa">
+      <input src="images/spa.png" type="image" class="chooseActivities" id="boating" value="boating">
+      <input src="images/fishing.png" type="image" class="chooseActivities" id="fishing" value="fishing">
+      <input src="images/tennis.png" type="image"  class="chooseActivities" id="car" value="car">
+      <input src="images/kayaking.png" type="image"  class="chooseActivities" id="grocery" value="grocery">
+      <input src="images/fitness.png" type="image"  class="chooseActivities" id="catering" value="catering">
+      <input src="images/kayaking.png" type="image" class="chooseActivities" id="babysitting" value="babysitting">
+      <input type="button" class="rateStay" id="complete-button" value="Submit Survey">
     </section>
 
 
     <!-- 1A Rating overall experience -->
 
-    <section class="textForms" id="teeTime">
-      <h1>PLEASE REQUEST YOUR TEE TIME BELOW<br />
+    <section class="textForms" id="teeTimeContainer">
+      <h1>GOLF REQUEST<br />
 </h1>
-      <input type="text" name="entry.38889136" class="name" id="firstName" placeholder="Requested date">
-      <input type="text" name="entry.562344336" class="name" id="lastName" placeholder="Reqested time">
-      <input type="text" name="entry.562344336" class="name" id="firstName" placeholder="Number of players">
-      <input type="text" name="entry.562344336" class="name" id="firstName" placeholder="Will you need to rent clubs?">
-      <textarea type="text" name="entry.562344336" class="name" id="firstName" placeholder="Any other requests?"></textarea>
+      <textarea type="text" name="entry.1008869356" class="name" id="teeTime firstName" placeholder="Please provide the information for your requested tee times: April 15, 2 golfers, 8am tee time, club rentals needed; April 17, 4 golfers, 10am tee time, club rentals needed"
+></textarea>
       <button class="submitExplain" id="nameButton">submit</button>
     </section>
 
-    <!-- 1B EXPLAIN OVERALL EXPERIENCE -->
-
-    <section id="explainExperienceContainer">
-      <h1>PLEASE EXPLAIN YOUR EXPERIENCE AND WHAT WE COULD HAVE DONE BETTER.</h1>
-      <form id="explainExperienceForm">
-        <textarea type="text" name="entry.1447387079" class="explain-box" cols "40"></textarea>
-      </form>
-      <button class="submitExplain">submit</button>
+        <section class="textForms" id="foodContainer">
+      <h1>DINNER RESERVATIONS<br />
+</h1>
+      <textarea type="text" name="entry.1242703877" class="name" id="food" placeholder="Please provide the dates, times, number in party, and any special requests."
+></textarea>
+      <button class="submitExplain" id="nameButton">submit</button>
     </section>
 
+        <section class="textForms" id="spaContainer">
+      <h1>SPA APPOINTMENTS<br />
+</h1>
+      <textarea type="text" name="entry.1115353877" class="name" id="food" placeholder="Please provide the dates, times, number in party, and any special requests."
+></textarea>
+      <button class="submitExplain" id="nameButton">submit</button>
+    </section>
+
+            <section class="textForms" id="boatingContainer">
+      <h1>BOATING EXCURSIONS<br />
+</h1>
+      <textarea type="text" name="entry.1586878454" class="name" id="food" placeholder="Please provide the dates, times, number in party, and any special requests."
+></textarea>
+      <button class="submitExplain" id="nameButton">submit</button>
+    </section>
+
+ <section class="textForms" id="fishingContainer">
+      <h1>FISHING EXCURSIONS<br />
+</h1>
+      <textarea type="text" name="entry.1891771288" class="name" id="food" placeholder="Please provide the dates, times, number in party, and any special requests."
+></textarea>
+      <button class="submitExplain" id="nameButton">submit</button>
+    </section>
+ <section class="textForms" id="carContainer">
+      <h1>CAR RENTALS<br />
+</h1>
+      <textarea type="text" name="entry.895214464" class="name" id="food" placeholder="Please provide the dates, times, number in party, and any special requests."
+></textarea>
+      <button class="submitExplain" id="nameButton">submit</button>
+    </section>
+
+ <section class="textForms" id="groceryContainer">
+      <h1>GROCERIES<br />
+</h1>
+      <textarea type="text" name="entry.2042758316" class="name" id="food" placeholder="Please provide the dates, times, number in party, and any special requests."
+></textarea>
+      <button class="submitExplain" id="nameButton">submit</button>
+    </section>
+
+     <section class="textForms" id="cateringContainer">
+      <h1>IN-HOME CATERING<br />
+</h1>
+      <textarea type="text" name="entry.1084686570" class="name" id="food" placeholder="Please provide the dates, times, number in party, and any special requests."
+></textarea>
+      <button class="submitExplain" id="nameButton">submit</button>
+    </section>
+
+ <section class="textForms" id="babysittingContainer">
+      <h1>BABYSITTING REQUESTS<br />
+</h1>
+      <textarea type="text" name="entry.562344336" class="name" id="food" placeholder="Please provide the dates, times, number in party, and any special requests."
+></textarea>
+      <button class="submitExplain" id="nameButton">submit</button>
+    </section>
 
     <section class="results" id="greatTime">
       <div class="resultsText" id="greatTimeText">
@@ -109,4 +190,4 @@
 
 </html>
 
-</html>
+

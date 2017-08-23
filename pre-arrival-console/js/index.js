@@ -1,98 +1,87 @@
 
 	$(document).ready(function(){
 
+		var arrival;
 		var firstName;
 		var lastName;
-		var accommodations;
-		var overallExperience;
-		var explainExperienceText;
-		var arrivalQuestionYesNo;
-		var arrivalExperience;
-		var arrivalExperienceText;
-		var commentArrivalExperienceText;
-		var checkInExperience;
-		var checkInExperienceText;
-		var accommodationsExperience;
-		var accommodationsExperienceText;
-		var serviceExperience;
-		var serviceExperienceText;
-		var otherExperienceText = "something";
-		var golf;
+		var guest1firstname;
+		var guest1lastname;
+		var guest1email;
+		var guest2firstname;
+		var guest2lastname;
+		var guest2email;
+		var guest3firstname;
+		var guest3lastname;
+		var guest3email;
+		var guest4firstname;
+		var guest4lastname;
+		var guest4email;
+		var guest5firstname;
+		var guest5lastname;
+		var guest5email;
+		var guest6firstname;
+		var guest6lastname;
+		var guest6email;
+		var guest7firstname;
+		var guest7lastname;
+		var guest7email;
+		var guest8firstname;
+		var guest8lastname;
+		var guest8email;
+		var teeTime;
 		var food;
-		var beach;
 		var spa;
+		var boating;
 		var fishing;
-		var kayaking;
-		var tennis;
-		var fitness;
+		var car;
+		var grocery;
+		var catering;
+		var babysitting;
 		var choosePathRemaining;
+		var filledOut = "yes";
 
-//ACTIVITIES ARRAY
-var activitiesList = [];
-
-
-
-//ACTIVITIES MULTISELECT
-	 $("#favoriteActivities input").click(function(){
-	 	 $(this).toggleClass("selected");
+	$("input").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#nameButton").click();
+    }
 });
 
-
-$('#golf').click(function() {
-	 golf = firstName + " " + lastName + " would like to book a tee time."
-	  	 $("#favoriteActivities").fadeOut("slow", function(){
-	 	 $("#teeTime").fadeIn("slow");
-	 	 });
-	 	 console.log(firstName, lastName);
-	 	 returnTop();
-	 });
-
-$('#favoriteActivities button').click(function() {
-	if ($("#golf").hasClass("selected")){
-		golf = $("#golf").val();
-		activitiesList.push(golf);
-	}
-	if ($("#food").hasClass("selected")){
-		food = $("#food").val();
-		activitiesList.push(food);
-	}
-	if ($("#beach").hasClass("selected")){
-		beach = $("#beach").val();
-		activitiesList.push(beach);
-	}
-	if ($("#spa").hasClass("selected")){
-		spa = $("#spa").val();
-		activitiesList.push(spa);
-	}
-	if ($("#fishing").hasClass("selected")){
-		fishing = $("#fishing").val();
-		activitiesList.push(fishing);
-	}
-	if ($("#tennis").hasClass("selected")){
-		tennis = $("#tennis").val();
-		activitiesList.push(tennis);
-	}
-	if ($("#kayaking").hasClass("selected")){
-		kayaking = $("#kayaking").val();
-		activitiesList.push(kayaking);
-	}
-	if ($("#fitness").hasClass("selected")){
-		fitness = $("#fitness").val();
-		activitiesList.push(fitness);
-	};
-		 $("#favoriteActivities").fadeOut("slow", function(){
-	 	 $("#choosePath").fadeIn("slow");
-	 	 });
-		 console.log(activitiesList);
-	 	 returnTop();
-	 });
+//ACTIVITIES MULTISELECT
+ $("#favoriteActivities input").click(function(){
+	 	 $(this).toggleClass("selected");
+});
 
 
 // Get Name
 
 $('#provideName button').click(function() {
+		 arrival = $("#datepicker").val();
 	 	 firstName = $("#firstName").val();
 	 	 lastName = $("#lastName").val();
+	 	guest1firstname = $("#guest1firstname").val();
+		guest1lastname = $("#guest1lastname").val();
+		guest1email = $("#guest1email").val();
+		guest2firstname = $("#guest2firstname").val();
+		guest2lastname = $("#guest2lastname").val();
+		guest2email = $("#guest2email").val();
+		guest3firstname = $("#guest3firstname").val();
+		guest3lastname = $("#guest3lastname").val();
+		guest3email = $("#guest3email").val();
+		guest4firstname = $("#guest4firstname").val();
+		guest4lastname = $("#guest4lastname").val();
+		guest4email = $("#guest4email").val();
+		guest5firstname = $("#guest5firstname").val();
+		guest5lastname = $("#guest5lastname").val();
+		guest5email = $("#guest5email").val();
+		guest6firstname = $("#guest6firstname").val();
+		guest6lastname = $("#guest6lastname").val();
+		guest6email = $("#guest6email").val();
+		guest7firstname = $("#guest7firstname").val();
+		guest7lastname = $("#guest7lastname").val();
+		guest7email = $("#guest7email").val();
+		guest8firstname = $("#guest8firstname").val();
+		guest8lastname = $("#guest8lastname").val();
+		guest8email = $("#guest8email").val();
 	 	 $("#provideName").fadeOut("slow", function(){
 	 	 $("#favoriteActivities").fadeIn("slow");
 	 	 });
@@ -100,315 +89,253 @@ $('#provideName button').click(function() {
 	 	 returnTop();
 	 });
 
+//GOLF TRANSITION
 
-$("#lastName").keyup(function(event){
-    if(event.keyCode == 13){
-        $("#nameButton").click();
-    }
-});
-
-
-//1A OVERALL EXPERIENCE
-	 $('#teeTime button').click(function() {
-	 	 overallExperience = $(this).val();
-	 	 console.log(overallExperience);
-	 	 $("#teeTime").fadeOut("slow", function(){
-	 	 $("#favoriteActivities").fadeIn("slow");
-	 	returnTop();
-
-
-     });
-
-
-//N Path Selector
-	 $('#choosePath input').click(function() {
-	 	 pathSelect = $(this).val();
-	 	 if (pathSelect === "Golf") {
-	 	 	$(".rateStay").prop("disabled", true);
-	 	 $("#choosePath").fadeOut("slow", function(){
-	 	 $("#rateGolf").fadeIn("slow");
-	 	 	$(".rateStay").prop("disabled", false);
-
-	 	 	});
-	 	}
-	 	 if (pathSelect === "Check-In") {
-	 	 		 	$(".rateStay").prop("disabled", true);
-	 	 $("#choosePath").fadeOut("slow", function(){
-	 	 $("#rateCheckIn").fadeIn("slow");
+$('#golf').click(function() {
+	 golf = firstName + " " + lastName + " would like to book a tee time."
+	 $(".rateStay").prop("disabled", true);
+	  	 $("#favoriteActivities").fadeOut("slow", function(){
+	 	 $("#teeTimeContainer").fadeIn("slow");
 	 	 $(".rateStay").prop("disabled", false);
-	 	 	});
-	 	}
-	 	 if (pathSelect === "Accommodation") {
-	 	 		 	$(".rateStay").prop("disabled", true);
-	 	 $("#choosePath").fadeOut("slow", function(){
-	 	 $("#rateAccommodations").fadeIn("slow");
-	 	 $(".rateStay").prop("disabled", false);
-	 	 	});
-	 	}
-	 	 if (pathSelect === "Service") {
-	 	 		 	$(".rateStay").prop("disabled", true);
-	 	 $("#choosePath").fadeOut("slow", function(){
-	 	 $("#rateService").fadeIn("slow");
-	 	 $(".rateStay").prop("disabled", false);
-	 	 	});
-	 	}
- 		if (pathSelect === "Continue") {
- 				 	$(".rateStay").prop("disabled", true);
-	 	 $("#choosePath").fadeOut("slow", function(){
-	 	 $("#explainOtherContainer").fadeIn("slow");
-	 	 $(".rateStay").prop("disabled", false);
-	 	 	});
-	 	}
-	 	console.log(pathSelect);
-	 	returnTop();
-     });
-
-
-//2B RATE GOLF EXPERIENCE
-	 $('#rateGolf input').click(function() {
-	 	 arrivalExperience = $(this).val();
-	 	 console.log(arrivalExperience);
-	 	 if (arrivalExperience <= 3) {
-	 	 $("#rateGolf").fadeOut("slow", function(){
-	 	 $("#explainGolfContainer").fadeIn("slow");
-	 	 	});
-
-	 	}
-	 	else {
-	 	 $("#rateGolf").fadeOut("slow", function(){
-	 	 $("#choosePath").fadeIn("slow");
-	 	});
-     };
-     $("#golf-button").addClass("disabled");
-     returnTop();
-     });
-//2C EXPLAIN GOLF EXPERIENCE
-
-	 	 $('#explainGolfContainer button').click(function() {
-	 	 arrivalExperienceText = $("#explainGolfContainer textarea").val();
-	 	 console.log(arrivalExperienceText);
-	 	 $("#explainGolfContainer").fadeOut("slow", function(){
-	 	 $("#choosePath").fadeIn("slow");
 	 	 });
-	 	 $("#golf-button").addClass("disabled");
+	 	 console.log(golf);
 	 	 returnTop();
 	 });
 
-
-//3A CHECKIN EXPERIENCE
-	 $('#rateCheckIn input').click(function() {
-	 	 checkInExperience = $(this).val();
-	 	 console.log(checkInExperience);
-	 	 if (checkInExperience <= 3) {
-	 	 $("#rateCheckIn").fadeOut("slow", function(){
-	 	 $("#explainCheckInContainer").fadeIn("slow");
-	 	 	});
-
-	 	}
-	 	else {
-	 	 $("#rateCheckIn").fadeOut("slow", function(){
-	 	 $("#choosePath").fadeIn("slow");
-	 	});
-     };
-     $("#check-in-button").addClass("disabled");
-     returnTop();
+//GOLF SUBMISSION
+	 $('#teeTimeContainer button').click(function(){
+	 	 teeTime = $("#teeTimeContainer textarea").val();
+	 	 console.log(teeTime);
+	 	 $("#teeTimeContainer").fadeOut("slow", function(){
+	 	 $("#favoriteActivities").fadeIn("slow");
+	 	returnTop();
      });
-
-//3B
-
-	 	 $('#explainCheckInContainer button').click(function() {
-	 	 checkInExperienceText = $("#explainCheckInContainer textarea").val();
-	 	 console.log(checkInExperienceText);
-	 	 $("#explainCheckInContainer").fadeOut("slow", function(){
-	 	 $("#choosePath").fadeIn("slow");
 	 	 });
+
+//DINNER TRANSITION
+	 $('#dinner').click(function() {
+	 $(".rateStay").prop("disabled", true);
+	  	 $("#favoriteActivities").fadeOut("slow", function(){
+	 	 $("#foodContainer").fadeIn("slow");
+	 	 $(".rateStay").prop("disabled", false);
+	 	 });
+	 	 console.log(golf);
 	 	 returnTop();
-	 	});
+	 });
 
-//4A ACOMMODATIONS EXPERIENCE
-	 $('#rateAccommodations input').click(function() {
-	 	 accommodationsExperience = $(this).val();
-	 	 console.log(accommodationsExperience);
-	 	 if (accommodationsExperience <= 3) {
-	 	 $("#rateAccommodations").fadeOut("slow", function(){
-	 	 $("#explainAccommodationsContainer").fadeIn("slow");
-	 	 	});
+//DINNER SUBMISSION
 
-	 	}
-	 	else {
-	 	 $("#rateAccommodations").fadeOut("slow", function(){
-	 	 $("#choosePath").fadeIn("slow");
-	 	});
-     };
-     $("#accommodation-button").addClass("disabled");
-     returnTop();
+	 $('#foodContainer button').click(function(){
+	 	 food = $("#foodContainer textarea").val();
+	 	 console.log(teeTime);
+	 	 $("#foodContainer").fadeOut("slow", function(){
+	 	 $("#favoriteActivities").fadeIn("slow");
+	 	returnTop();
      });
-
-//4B ACCOMMODATIONS EXPLAIN
-
-	 	 $('#explainAccommodationsContainer button').click(function() {
-	 	 accommodationsExperienceText = $("#explainAccommodationsContainer textarea").val();
-	 	 console.log(accommodationsExperienceText);
-	 	 $("#explainAccommodationsContainer").fadeOut("slow", function(){
-	 	 $("#choosePath").fadeIn("slow");
 	 	 });
+
+//SPA TRANSITION
+	 $('#spa').click(function() {
+	 $(".rateStay").prop("disabled", true);
+	  	 $("#favoriteActivities").fadeOut("slow", function(){
+	 	 $("#spaContainer").fadeIn("slow");
+	 	 $(".rateStay").prop("disabled", false);
+	 	 });
+	 	 console.log(golf);
 	 	 returnTop();
-	 	});
+	 });
 
-//5A SERVICE EXPERIENCE
-	 $('#rateService input').click(function() {
-	 	 serviceExperience = $(this).val();
-	 	 console.log(serviceExperience);
-	 	 if (serviceExperience <= 3) {
-	 	 $("#rateService").fadeOut("slow", function(){
-	 	 $("#explainServiceContainer").fadeIn("slow");
-	 	 	});
+//SPA SUBMISSION
 
-	 	}
-	 	else {
-	 	 $("#rateService").fadeOut("slow", function(){
-	 	 $("#choosePath").fadeIn("slow");
-	 	});
-     };
-     $("#service-button").addClass("disabled");
-     returnTop();
+	 $('#spaContainer button').click(function(){
+	 	 spa = $("#spaContainer textarea").val();
+	 	 console.log(teeTime);
+	 	 $("#spaContainer").fadeOut("slow", function(){
+	 	 $("#favoriteActivities").fadeIn("slow");
+	 	returnTop();
      });
-
-//5B SERVICE EXPLAIN
-
-	 	 $('#explainServiceContainer button').click(function() {
-	 	 serviceExperienceText = $("#explainServiceContainer textarea").val();
-	 	 console.log(serviceExperienceText);
-	 	 $("#explainServiceContainer").fadeOut("slow", function(){
-	 	 $("#choosePath").fadeIn("slow");
 	 	 });
-	 	 returnTop();
-	 	});
 
-//6 OTHER
-		 $('#explainOtherContainer button').click(function() {
-	 	 otherExperienceText = $("#explainOtherContainer textarea").val();
-	 	 console.log(otherExperienceText);
-	 	 $("#explainOtherContainer").fadeOut("slow", function(){
-	 	 $("#choosePath").fadeIn("slow");
+//BOATING TRANSITION
+	 $('#boating').click(function() {
+	 $(".rateStay").prop("disabled", true);
+	  	 $("#favoriteActivities").fadeOut("slow", function(){
+	 	 $("#boatingContainer").fadeIn("slow");
+	 	 $(".rateStay").prop("disabled", false);
 	 	 });
-	 	 $("#other-button").addClass("disabled");
+	 	 console.log(golf);
 	 	 returnTop();
-	 	});
+	 });
 
+//BOATING SUBMISSION
 
+	 $('#boatingContainer button').click(function(){
+	 	 boating = $("#boatingContainer textarea").val();
+	 	 console.log(teeTime);
+	 	 $("#boatingContainer").fadeOut("slow", function(){
+	 	 $("#favoriteActivities").fadeIn("slow");
+	 	returnTop();
+     });
+	 	 });
 
+//fishing TRANSITION
+	 $('#fishing').click(function() {
+	 $(".rateStay").prop("disabled", true);
+	  	 $("#favoriteActivities").fadeOut("slow", function(){
+	 	 $("#fishingContainer").fadeIn("slow");
+	 	 $(".rateStay").prop("disabled", false);
+	 	 });
+	 	 console.log(golf);
+	 	 returnTop();
+	 });
 
-		var totalAnswered;
-		var newValue;
-		var totalValue;
+//fishing SUBMISSION
+
+	 $('#fishingContainer button').click(function(){
+	 	 fishing = $("#fishingContainer textarea").val();
+	 	 console.log(teeTime);
+	 	 $("#fishingContainer").fadeOut("slow", function(){
+	 	 $("#favoriteActivities").fadeIn("slow");
+	 	returnTop();
+     });
+	 	 });
+
+//car TRANSITION
+	 $('#car').click(function() {
+	 $(".rateStay").prop("disabled", true);
+	  	 $("#favoriteActivities").fadeOut("slow", function(){
+	 	 $("#carContainer").fadeIn("slow");
+	 	 $(".rateStay").prop("disabled", false);
+	 	 });
+	 	 console.log(golf);
+	 	 returnTop();
+	 });
+
+//car SUBMISSION
+
+	 $('#carContainer button').click(function(){
+	 	 car = $("#carContainer textarea").val();
+	 	 console.log(teeTime);
+	 	 $("#carContainer").fadeOut("slow", function(){
+	 	 $("#favoriteActivities").fadeIn("slow");
+	 	returnTop();
+     });
+	 	 });
+
+//grocery TRANSITION
+	 $('#grocery').click(function() {
+	 $(".rateStay").prop("disabled", true);
+	  	 $("#favoriteActivities").fadeOut("slow", function(){
+	 	 $("#groceryContainer").fadeIn("slow");
+	 	 $(".rateStay").prop("disabled", false);
+	 	 });
+	 	 console.log(golf);
+	 	 returnTop();
+	 });
+
+//grocery SUBMISSION
+
+	 $('#groceryContainer button').click(function(){
+	 	 grocery = $("#groceryContainer textarea").val();
+	 	 console.log(teeTime);
+	 	 $("#groceryContainer").fadeOut("slow", function(){
+	 	 $("#favoriteActivities").fadeIn("slow");
+	 	returnTop();
+     });
+	 	 });
+
+//catering TRANSITION
+	 $('#catering').click(function() {
+	 $(".rateStay").prop("disabled", true);
+	  	 $("#favoriteActivities").fadeOut("slow", function(){
+	 	 $("#cateringContainer").fadeIn("slow");
+	 	 $(".rateStay").prop("disabled", false);
+	 	 });
+	 	 console.log(golf);
+	 	 returnTop();
+	 });
+
+//catering SUBMISSION
+
+	 $('#cateringContainer button').click(function(){
+	 	 catering = $("#cateringContainer textarea").val();
+	 	 console.log(teeTime);
+	 	 $("#cateringContainer").fadeOut("slow", function(){
+	 	 $("#favoriteActivities").fadeIn("slow");
+	 	returnTop();
+     });
+	 	 });
+
+//babysitting TRANSITION
+	 $('#babysitting').click(function() {
+	 $(".rateStay").prop("disabled", true);
+	  	 $("#favoriteActivities").fadeOut("slow", function(){
+	 	 $("#babysittingContainer").fadeIn("slow");
+	 	 $(".rateStay").prop("disabled", false);
+	 	 });
+	 	 console.log(golf);
+	 	 returnTop();
+	 });
+
+//babysitting SUBMISSION
+
+	 $('#babysittingContainer button').click(function(){
+	 	 babysitting = $("#babysittingContainer textarea").val();
+	 	 console.log(teeTime);
+	 	 $("#babysittingContainer").fadeOut("slow", function(){
+	 	 $("#favoriteActivities").fadeIn("slow");
+	 	returnTop();
+     });
+	 	 });
+
 
 //submit survey function
 	 	$('#complete-button').click(function() {
 	 		//submit all values to Google
-	 	otherExperienceText = $("#explainOtherContainer textarea").val();
-	 	 console.log(otherExperienceText);
-	 		postContactToGoogle();
-	 		$("#sd-logo").fadeOut(1500);
-	 		 $('#bgimage').fadeIn(2000);
-
-
-
-			//create array that contains all variables with number;
-
-	 		var totalValue = [overallExperience, arrivalExperience, checkInExperience, accommodationsExperience,
-			serviceExperience];
-			//eliminate undefined variables from function by
-			//cycling through totalValue and pushing only variables
-			//with value to newArray.  Then parse the variables values
-			//so they are numeric, not string, values.
-			var newArray = new Array();
-	 		for (i = 0; i < totalValue.length; i++){
-	 		if (totalValue[i]){
-        	newArray.push(parseInt(totalValue[i]));
-    };
-  };
-
-//now that the variables have numerical values
-//cycle through each and add values to together.
-//newValue now equals sum of all values.
-
-console.log(newArray);
-newValue = 0;
-$.each(newArray,function() {
-    newValue += this;
-	console.log(newValue);
-});
-
-//Establish overall score by dividing the sum of all numeric values
-//by the total number of values in newArray
-
-	finalValue = newValue / newArray.length;
-	console.log(finalValue);
-
-//define ranking of average value and provide approriate messaging
-
-if (finalValue < 2.3){
-		console.log("they had a bad experience");
-		 $("#explainOtherContainer").fadeOut(1000, function(){
-	 	 setTimeout(badExperience, 2000);
-	 	 });
-	 	 returnTop();
-}
-else if (finalValue >= 2.3 && finalValue <= 3.2){
-	console.log("they had an ok experience");
-		$("#explainOtherContainer").fadeOut(1000, function(){
-	 	 setTimeout(okExperience, 2000);
-	 	 });
-	 	 returnTop();
-
-}
-
-else {
-	console.log("they had a great experience");
-	$("#explainOtherContainer").fadeOut(1000, function(){
-	setTimeout(greatExperience, 2000);
-	});
-	returnTop();
-}
-	 	});
-
-	 	 });
-
-
-	  function postContactToGoogle() {
-          $.ajax({
-              url: "https://docs.google.com/forms/d/1LhYEyMKY2nRqJNqwr0vDwnIJjrayOe69MOs-TttwFPE/formResponse",
+	 		console.log(typeof firstName);
+	 		// postContactToGoogle();
+	 		$.ajax({
+              url: "https://docs.google.com/forms/d/e/1FAIpQLScqUxJfwN1boc5xIUy1cSzmbBxN9dIZFbwwV_ZECkQ476t6EA/formResponse",
               data: {
-              "entry.428533182": overallExperience,
-              "entry.1447387079": explainExperienceText,
-              "entry.660795754": arrivalExperience,
-              "entry.1659805839": golf,
-              "entry.1043167667": food,
-              "entry.1443328567": beach,
-              "entry.2132321252": spa,
-              "entry.1041476142": fishing,
-              "entry.387432865": tennis,
-              "entry.1969578007": fitness,
-              "entry.1484677548": kayaking,
-              "entry.1973419171": arrivalQuestionYesNo,
-              "entry.1952859007":arrivalExperience,
-              "entry.2066698541":arrivalExperienceText,
-              "entry.332010930":checkInExperience,
-              "entry.1865974282":checkInExperienceText,
-              "entry.175538394":accommodationsExperience,
-              "entry.1199835736":accommodationsExperienceText,
-              "entry.698190917":serviceExperience,
-              "entry.443065806":serviceExperienceText,
-              "entry.1564517891":otherExperienceText,
-              "entry.562344336":lastName,
-              "entry.38889136":firstName
-
-          		},
+	"entry.1458294248":arrival,
+      "entry.125958543":firstName,
+      "entry.1751603251":lastName,
+      "entry.1912128957":guest1firstname,
+      "entry.8793174":guest1lastname,
+      "entry.1133083523":guest1email,
+      "entry.181165311":guest2firstname,
+      "entry.1779926079":guest2lastname,
+      "entry.1407424141":guest2email,
+      "entry.720697189":guest3firstname,
+      "entry.860627045":guest3lastname,
+      "entry.569848737":guest3email,
+      "entry.228868308":guest4firstname,
+      "entry.720785260":guest4lastname,
+      "entry.1560625099":guest3email,
+      "entry.2103772881":guest5firstname,
+      "entry.1005462121":guest5lastname,
+      "entry.30990793":guest5email,
+      "entry.1516109444":guest6firstname,
+      "entry.681371232":guest6lastname,
+      "entry.1727814613":guest6email,
+      "entry.1869442866":guest7firstname,
+      "entry.1215000110":guest7lastname,
+      "entry.993831154":guest7email,
+      "entry.34591044":guest8firstname,
+      "entry.854742999":guest8lastname,
+      "entry.1491345046":guest8email,
+      "entry.320904679":filledOut
+  },
               type: "POST",
               dataType: "xml",
           });
-    }
+	 		$("#favoriteActivities").fadeOut(600, function(){setTimeout(greatExperience, 800); setTimeout(resetBG, 800)});
+	 		$("#sd-logo").fadeOut(600);
+	 	 });
+	 	 });
+
+	  // function postContactToGoogle() {
+          
 
 //functions for each experience
 
@@ -425,6 +352,9 @@ var greatExperience = function(){
 	$("#greatTimeText").fadeIn(2000);
 };
 
+var resetBG = function(){
+	$('#bgimage').fadeIn(2000);
+}
 
 //scroll back to top on submit
 var returnTop =  function(){
@@ -432,5 +362,7 @@ var returnTop =  function(){
         scrollTop: $("body").offset().top
     }, 800);
     };
-});
 
+  // $( function() {
+  //   $( "#datepicker" ).datepicker();
+  // }); 

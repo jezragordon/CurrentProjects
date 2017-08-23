@@ -64,10 +64,27 @@ background-size:cover;
   transition: background-image 7.0s ease;
 }
 
+#bgimage {
+  background-image: url("../images/survey-bg-no-blur-reduced.jpg");
+  background-repeat: no-repeat;
+background-position: center center;
+background-attachment: fixed;
+background-size:cover;
+-webkit-background-size:cover;
+-moz-background-size:cover;
+-o-background-size:cover;
+  font-family: lato;
+  color: #fff;
+  -webkit-transition: background-image 7.0s ease;
+  -moz-transition: background-image 7.0s ease;
+  -o-transition: background-image 7.0s ease;
+  transition: background-image 7.0s ease;
+}
+
   }
 
 #firstName, #lastName, textarea{
-  background-color: rgba(255, 255, 255, .4);
+  background-color: rgba(255, 255, 255, .7);
   border-style: none;
 }
 
@@ -157,7 +174,7 @@ section #submitButton{
   padding:5px;
 }
 
-#teeTime{
+#teeTimeContainer, #foodContainer, #spaContainer, #boatingContainer, #fishingContainer, #carContainer, #groceryContainer, #cateringContainer, #babysittingContainer, .resultsText{
   display:none;
 }
 
@@ -170,7 +187,7 @@ section #submitButton{
 }
 
 .textForms textarea{
-  width:300px;
+  width:80%;
   float:left;
   clear:both;
   height:200px;
@@ -842,7 +859,41 @@ width:250px;
 
 }
 
+.guestContainer{
+  background:rgba(255,255,255,.3);
+  display:inline-flex;
+  float:left;
+  padding: 5px 20px;
+  position:relative;
+}
+
+.emailContainer{
+  background:rgba(255,255,255,.3);
+  display:flex;
+  padding: 5px 20px;
+  position:relative;
+  margin-bottom:10px;
+}
+
+.guestContainer input[type="email"]{
+  clear:both;
+}
+
 .disabled:hover {
   opacity:0.3 !important;
 
 }
+
+.bigBottom{
+  margin-bottom:30px;
+}
+
+.name:nth-child(3n+3){
+  clear:both;
+  float:left;
+}
+
+
+
+
+
